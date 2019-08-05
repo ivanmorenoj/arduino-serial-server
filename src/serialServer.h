@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Stream.h>
 
-#define BUFF_SIZE   50
+#define BUFF_SIZE   100
 
 class serialServer
 {
@@ -13,7 +13,7 @@ private:
     byte _numOfCommands;
     char _buffer[BUFF_SIZE];
     char **_commandsArr;
-    char *(**_responseFunct)(char *);
+    char *(**_responseFunct)(char *,unsigned int);
 
 public:
     serialServer(Stream *stream);
@@ -21,7 +21,7 @@ public:
     ~serialServer();
     void setStream(Stream *stream);
     void setComands(const char ** ptrArr);
-    void setFunctions(char * (**ptr)(char *));
+    void setFunctions(char * (**ptr)(char *,unsigned int));
     void handleConnection();
     
 };
