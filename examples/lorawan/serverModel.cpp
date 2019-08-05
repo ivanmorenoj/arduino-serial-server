@@ -16,8 +16,6 @@ static unsigned char asciiToHex(char c) {
 }
 
 static void parsePayload(char *_buff,unsigned int *_len) {
-    // recive 0123456789ABCDDEF in ascii format
-    // copy buffer
     char *auxbuff = new char[*_len + 1];
     strncpy(auxbuff,_buff,*_len);
 
@@ -57,12 +55,6 @@ char * cmdSP(char *buff,unsigned int n) {
         auxbuff[i - 4] = buff[i];
 
     parsePayload(auxbuff,&newLen);
-
-    /* DEBUG 
-    */
-    for (byte i = 0; i < newLen; i++)
-        Serial.print(auxbuff[i], HEX);
-    Serial.print("\n");    
 
     lora.sendUplink(auxbuff,newLen,1);
     loraWanCounter++;
