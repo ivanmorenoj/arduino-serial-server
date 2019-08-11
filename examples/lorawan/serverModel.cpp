@@ -62,3 +62,52 @@ char * cmdSP(char *buff,unsigned int n) {
     sprintf(buff,"OK");
     return buff;
 }
+
+/* Command: [TP] send Tx Power */
+char * cmdTP(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [AM] send Activation method */
+char * cmdAM(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [DR] send Data Rate */
+char * cmdDR(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [CH] send Channel */
+char * cmdCH(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [NK] send Network key */
+char * cmdNK(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [AK] send App key */
+char * cmdAK(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [DA] send Device Address */
+char * cmdDA(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
+/* Command: [FC] send Frame counter */
+char * cmdFC(char *buff,unsigned int n) {
+    sprintf(buff,"OK");
+    return buff;
+}
+
