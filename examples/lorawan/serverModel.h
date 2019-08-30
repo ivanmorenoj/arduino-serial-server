@@ -30,7 +30,4 @@ static char * (*ptrFunc[11])(char *,unsigned int) = {
     cmdFC       /* send Frame counter */
 };
 
-/* Extern variables */
-extern unsigned int loraWanCounter;
-
 #endif //SERVERMODEL_H_

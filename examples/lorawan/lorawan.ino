@@ -2,13 +2,6 @@
 #include <lorawan.h>
 #include "serverModel.h"
 
-//ABP Credentials 
-const char *devAddr = "2602155B";
-const char *nwkSKey = "201A347B1452F5B636E9590DBE22C3CB";
-const char *appSKey = "E1445E1D42FBB463721E5FCF18B43726";
-
-unsigned int loraWanCounter = 0;
-
 byte recvStatus = 0;
 char outStr[20];
 
@@ -41,15 +34,10 @@ void setup() {
     lora.setDeviceClass(CLASS_A);
 
     // Set Data Rate
-    lora.setDataRate(SF9BW125);
+    lora.setDataRate(SF10BW125);
 
     // set channel to random
-    lora.setChannel(CH0);
-  
-    // Put ABP Key and DevAddress here
-    lora.setNwkSKey(nwkSKey);
-    lora.setAppSKey(appSKey);
-    lora.setDevAddr(devAddr);
+    lora.setChannel(MULTI);
 }
 
 void loop() {
