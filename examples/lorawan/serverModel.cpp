@@ -56,7 +56,7 @@ char * cmdSP(char *buff,unsigned int n) {
 
     parsePayload(auxbuff,&newLen);
 
-    lora.sendUplink(auxbuff,newLen,1);
+    lora.sendUplink(auxbuff,newLen,1,1);
 
     sprintf(buff,"OK");
     return buff;
@@ -67,7 +67,7 @@ char * cmdTP(char *buff,unsigned int n) {
     unsigned char txpower;
 
     txpower = asciiToHex(buff[4]) & 0x0F;
-    lora.setTxPower(txpower);
+    lora.setTxPower1(txpower);
 
     memset(buff,0,100);
     sprintf(buff,"OK");
